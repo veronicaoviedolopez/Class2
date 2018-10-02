@@ -9,19 +9,18 @@ class App extends Component {
       count:0,
     }
   }
-    handleClick(event){
-      console.log(event.target.innerText);
+    handleClick(sign){
       this.setState(
-        {count: event.target.innerText=== "+" ? this.state.count +1 : this.state.count - 1 }
+        {count: sign=== "+" ? this.state.count + 1 : this.state.count - 1 }
       )
     }
 
   render() {
     return (
       <div className="App">
-          <Button text="+" click = {this.handleClick.bind(this)}/>
+          <Button text="+" click = {this.handleClick.bind(this)} sign="+"/>
           <CounterStatus count={this.state.count}/>
-          <Button text="-" click = {this.handleClick.bind(this)}/>
+          <Button text="-" click = {this.handleClick.bind(this)} sign="-"/>
       </div>
     );
   }
